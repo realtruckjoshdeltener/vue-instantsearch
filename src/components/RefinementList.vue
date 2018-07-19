@@ -79,6 +79,12 @@ export default {
   },
   methods: {
     toggleRefinement(value) {
+    
+      this.$emit('refined', { 
+        attributeName: this.attributeName,
+        value: value.name
+      })
+      
       return this.searchStore.toggleFacetRefinement(
         this.attributeName,
         value.name
